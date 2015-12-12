@@ -2,7 +2,7 @@
 
 #sudo apt-add-repository ppa:diodon-team/stable
 sudo apt-get update
-sudo apt-get install vim pidgin pidgin-otr krusader konsole thunderbird mc chromium-browser clamtk htop elinks curl git 
+sudo apt-get install vim vim-gnome pidgin pidgin-otr krusader konsole thunderbird mc chromium-browser clamtk htop elinks curl git  gitk git-gui
 sudo apt-get install build-essential compizconfig-settings-manager vagrant exuberant-ctags
 #gcc
 
