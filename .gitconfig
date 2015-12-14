@@ -1,5 +1,5 @@
 git config --global user.name "sergesever"
-git config --global user.name "sergesever"
+git config --global user.email "sergesever@gmail.com"
 
 git config --global alias.co checkout
 git config --global alias.ci commit
