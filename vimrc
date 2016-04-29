@@ -59,7 +59,9 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
-
+"if filereadable("~/.vim/vimrc")
+"  source ~/.vim/vimrc
+"endif
 
 " ----------->SEARCH
 
@@ -88,10 +90,10 @@ set shiftwidth=4
 
 "set smarttab
 set expandtab
-"set smartindent
+set smartindent
 set number
 set mouse=a
-
+set noautoindent
 syntax enable
 set encoding=utf8
 
@@ -113,11 +115,18 @@ nnoremap <A-Up> <C-w><Up>
 nnoremap <A-Down> <C-w><Down>
 nnoremap <F8> :w !sudo tee %<CR>
 
+"nnoremap  <A-j> 15j
+"nnoremap  <A-j> 15j
+"imap  <A-k> <Esc>15ki
+"imap  <A-k> <Esc>15ki
+
+
 set paste
 map  <silent>  <S-Insert>  "+p
 imap <silent>  <S-Insert>  <Esc>"+pa
 map  <silent>  <C-Insert>  "+y
 imap <silent>  <C-Insert>  <Esc>"+ya
+
 
 autocmd FileType php nnoremap <F12> :!php -l %<CR>
 
@@ -136,7 +145,7 @@ command! W :w
 filetype on
 filetype plugin indent on
 
-call pathogen#infect()
+"call pathogen#infect()
 "configuration for vundle
 
 set shell=/bin/bash
@@ -153,18 +162,34 @@ set shell=/bin/bash
 " " NOTE: comments after Plugin commands are not allowed.
 " " Put your stuff after this line
 "
-" " set the runtime path to include Vundle and initialize
  set rtp+=~/.vim/bundle/vundle/
+
  call vundle#rc()
 " " alternatively, pass a path where Vundle should install plugins
 let path = '~/.vim/bundle/'
 call vundle#rc(path)
 "
+ call vundle#begin()
+
 " " let Vundle manage Vundle, required
- Plugin 'scrooloose/syntastic'
- Plugin 'scrooloose/nerdtree'
- Plugin 'tpope/vim-surround'
- Plugin 'kien/ctrlp.vim'
+
+    Plugin 'ctrlp.vim'
+   " Plugin 'jedi-vim' "https://github.com/davidhalter/jedi
+    Plugin 'davidhalter/jedi-vim'
+    Plugin 'L9' 
+    Plugin 'Pydiction'
+    Plugin 'Python-mode-klen'
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'scrooloose/syntastic'
+    Plugin 'SuperTab'
+    Plugin 'Tagbar' "http://vimawesome.com/plugin/tagbar
+    Plugin 'tpope/vim-fugitive' "http://vimawesome.com/plugin/fugitive-vim
+    Plugin 'tpope/vim-surround'
+    Plugin 'vim-ipython'
+    Plugin 'flazz/vim-colorschemes'
+    "Plugin 'Valloric/YouCompleteMe'
+    "Plugin 'kien/ctrlp.vim'
+" " set the runtime path to include Vundle and initialize
 
  let NERDTreeShowHidden=1
 
@@ -186,11 +211,13 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
   let g:ctrlp_map = '<C-p>'
   let g:ctrlp_cmd = 'CtrlP'
 
-
-
-
+call vundle#end()
 
 " ----------->OTHER
+"autocomplete
+"autocmd FileType php set omnifunc=phpcomplete#CompletePHP "ctrl x - Ctrl o
+"ctrl n for existing word
+"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
 set autoread
 set history=100
@@ -239,3 +266,5 @@ cmap WQ wq
 cmap wQ wq
 cmap Q q
 cmap Tabe tabe
+
+
