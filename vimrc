@@ -55,9 +55,15 @@ set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
 
 " Source a global configuration file if available
+<<<<<<< HEAD
 "if filereadable("/etc/vim/vimrc.local")
 "  source /etc/vim/vimrc.local
 "endif
+=======
+"if filereadable("/etc/vim/vimrc.local")
+"  source /etc/vim/vimrc.local
+"endif
+>>>>>>> origin
 
 "if filereadable("~/.vim/vimrc")
 "  source ~/.vim/vimrc
@@ -266,3 +272,5 @@ cmap WQ wq
 cmap wQ wq
 cmap Q q
 cmap Tabe tabe
+
+
